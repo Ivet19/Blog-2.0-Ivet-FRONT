@@ -1,17 +1,19 @@
-export interface Post {
+import { PostDto } from "./dto/types";
+
+export type Post = Omit<PostDto, "_id" | "publishDate"> & {
   id: string;
   publishDate: Date;
   author: string;
   title: string;
   imageUrl: string;
+  imageAlt: string;
   smallImageUrl?: string;
   detailImageUrl?: string;
-  imageAlt: string;
   tags: string[];
   previewTags: string[];
   content: string;
   previewContent: string;
-}
+};
 
 export type PostData = Omit<
   Post,
