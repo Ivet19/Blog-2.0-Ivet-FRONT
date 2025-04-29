@@ -11,9 +11,8 @@ describe("Given the PostDetailPage component", () => {
         <PostsContextProvider>
           <MemoryRouter initialEntries={[`/post/${huevosRotos.id}`]}>
             <Routes>
-              <Route path="/post" element={<PostDetailPage />}>
-                <Route path="/post/:id" element={<PostDetailPage />} />
-              </Route>
+              <Route path="/post" element={<PostDetailPage />} />
+              <Route path="/post/:id" element={<PostDetailPage />} />
             </Routes>
           </MemoryRouter>
         </PostsContextProvider>,
