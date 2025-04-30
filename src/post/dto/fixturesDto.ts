@@ -26,9 +26,68 @@ export const panLuzEstelarPostDto: PostDto = {
   title: "Pan de luz estelar de Kharbranth ✨🍞",
 };
 
+export const guisoParshendiPostDto: PostDto = {
+  _id: "16",
+  author: "Explorador de la meseta Shattered",
+  content:
+    "Durante las campañas en las Llanuras Quebradas, los soldados alezi llegaron a conocer el particular aroma del guiso parshendi, un plato robusto y nutritivo que se decía tenía raíces antiguas entre los cantores. Este estofado profundo combina legumbres terrosas, trozos de carne cocidos a fuego lento y una infusión de hierbas silvestres que solo crecen cerca de los abismos. Tiene un sabor ahumado, casi mineral, como si las tormentas hubieran dejado su huella en cada cucharada. Reimaginado aquí con lentejas negras, carne de res braseada y una mezcla de tomillo, romero y pimentón ahumado, este plato es ideal para una noche fría o una sesión de lectura intensa de *Juramentada*. Sírvelo caliente, con pan rústico al lado, y deja que el eco de los tambores parshendi acompañe tu comida.",
+  imageAlt: "Plato hondo de guiso oscuro con hierbas y carne",
+  imageUrl: "https://example.com/guiso-parshendi.jpg",
+  smallImageUrl: "",
+  publishDate: "2025-04-23T00:00:00.000Z",
+  tags: ["stormlight", "parshendi", "comida-roshar"],
+  title: "Guiso ancestral de los cantores 🍲🌩️",
+};
+
+export const pastelGemheartsPostDto: PostDto = {
+  _id: "17",
+  author: "Repostero de Urithiru",
+  content:
+    "Inspirado en las gemhearts que los cazadores arriesgan la vida por extraer, este pastel es una joya culinaria que captura la belleza de Roshar en cada porción. La base esponjosa de vainilla se rellena con un centro de gelatina brillante de frutas rojas y se corona con azúcar cristalizada que simula la superficie facetada de una verdadera gema. En cada mordida hay un contraste entre lo dulce, lo ácido y lo crujiente, como si saborearas un fragmento de esquirla. Ideal para celebraciones entre esquirlados, banquetes en Urithiru o simplemente para deslumbrar a tus invitados en una merienda temática. ¿Te atreves a probar este tesoro comestible?",
+  imageAlt: "Pastel cortado con centro rojo brillante y cobertura azucarada",
+  imageUrl: "https://example.com/pastel-gemhearts.jpg",
+  smallImageUrl: "",
+  publishDate: "2025-04-23T00:00:00.000Z",
+  tags: ["stormlight", "pastel", "gemhearts"],
+  title: "Pastel gemheart: dulzura esquirlada 💎🍰",
+};
+
+export const teHorneadorPostDto: PostDto = {
+  _id: "18",
+  author: "Ardent del monasterio de Valath",
+  content:
+    "Los horneadores, maestros del cultivo y guardianes del conocimiento espiritual, solían preparar un té ceremonial que simbolizaba la conexión entre los diez órdenes de los Caballeros Radiantes. Este té, oscuro como las profundidades de Shadesmar y perfumado con especias exóticas, se servía durante las meditaciones previas a las visiones. En esta versión, combinamos té negro fuerte, cardamomo, clavo, canela y una pizca de esencia de naranja, creando una bebida intensa y reconfortante. Se recomienda beberlo en silencio, con una piedra de infusión cerca y la mente abierta a visiones. Ideal para momentos de introspección o antes de sumergirse en los textos de Navani.",
+  imageAlt: "Taza de té humeante con especias flotando",
+  imageUrl: "https://example.com/te-horneador.jpg",
+  smallImageUrl: "",
+  publishDate: "2025-04-23T00:00:00.000Z",
+  tags: ["stormlightarchive", "té", "espiritualidad"],
+  title: "Té de los horneadores ☕🔮",
+};
+
+export const brochetasHorneaterPostDto: PostDto = {
+  _id: "19",
+  author: "Chef viajero en el Horno de los Picos",
+  content:
+    "Los Horneater, conocidos por su resistencia y su espíritu festivo, preparan estas brochetas como parte de sus rituales comunitarios. Hechas con trozos de carne bien sazonada, verduras asadas y un toque de sal volcánica, se cocinan sobre piedras calientes en los manantiales termales. Esta versión está adaptada para el asador moderno: carne de cordero o cerdo marinada con mostaza, ajo y especias, intercalada con cebolla y pimiento. Ideal para barbacoas temáticas o celebraciones post-duelo (como harían Rock y su familia). Sirve con cerveza fuerte o agua cristalina, y recuerda brindar en honor a los Radiantes.",
+  imageAlt: "Brochetas asadas con carne y vegetales sobre brasas",
+  imageUrl: "https://example.com/brochetas-horneater.jpg",
+  smallImageUrl: "",
+  publishDate: "2025-04-23T00:00:00.000Z",
+  tags: ["stormlight", "horneater", "asado"],
+  title: "Brochetas ardientes de Horneater 🔥🥩",
+};
+
 export const archivoDeLasTormentasComidaPostsDto = [
   choutaKaladinPostDto,
   panLuzEstelarPostDto,
+  guisoParshendiPostDto,
+  pastelGemheartsPostDto,
+  teHorneadorPostDto,
+];
+
+export const archivoDeLasTormentasSecondPagePostsDto = [
+  brochetasHorneaterPostDto,
 ];
 
 export const huevosRotosBruc159PostDto: PostDto = {
