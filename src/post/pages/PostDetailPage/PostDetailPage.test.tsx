@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter, Route, Routes } from "react-router";
+import { MemoryRouter } from "react-router";
+import AppRouter from "../../../router/AppRouter";
 import PostsContextProvider from "../../context/PostsContextProvider";
-import PostDetailPage from "./PostDetailPage";
 import { huevosRotos } from "../../fixtures";
 
 describe("Given the PostDetailPage component", () => {
@@ -10,10 +10,7 @@ describe("Given the PostDetailPage component", () => {
       render(
         <PostsContextProvider>
           <MemoryRouter initialEntries={[`/post/${huevosRotos.id}`]}>
-            <Routes>
-              <Route path="/post" element={<PostDetailPage />} />
-              <Route path="/post/:id" element={<PostDetailPage />} />
-            </Routes>
+            <AppRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
@@ -29,11 +26,7 @@ describe("Given the PostDetailPage component", () => {
       render(
         <PostsContextProvider>
           <MemoryRouter initialEntries={[`/post/${huevosRotos.id}`]}>
-            <Routes>
-              <Route path="/post" element={<PostDetailPage />}>
-                <Route path="/post/:id" element={<PostDetailPage />} />
-              </Route>
-            </Routes>
+            <AppRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
