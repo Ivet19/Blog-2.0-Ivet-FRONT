@@ -23,27 +23,27 @@ describe("Given the Button component", () => {
 
       expect(buttonElement).toBeVisible();
     });
-  });
 
-  describe("And the user clicks the 'Click for fun' button", () => {
-    test("Then it should call the action", async () => {
-      const action = vitest.fn();
+    describe("And the user clicks the 'Click for fun' button", () => {
+      test("Then it should call the action", async () => {
+        const action = vitest.fn();
 
-      render(
-        <Button
-          text={expectedButtonText}
-          action={action}
-          classModifierName="test"
-        />,
-      );
+        render(
+          <Button
+            text={expectedButtonText}
+            action={action}
+            classModifierName="test"
+          />,
+        );
 
-      const buttonElement = screen.getByRole("button", {
-        name: new RegExp(expectedButtonText, "i"),
+        const buttonElement = screen.getByRole("button", {
+          name: new RegExp(expectedButtonText, "i"),
+        });
+
+        await user.click(buttonElement);
+
+        expect(action).toHaveBeenCalled();
       });
-
-      await user.click(buttonElement);
-
-      expect(action).toHaveBeenCalled();
     });
   });
 });
