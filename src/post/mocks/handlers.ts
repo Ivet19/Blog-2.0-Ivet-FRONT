@@ -2,6 +2,7 @@ import { http, HttpResponse } from "msw";
 import {
   archivoDeLasTormentasComidaPostsDto,
   archivoDeLasTormentasSecondPagePostsDto,
+  brochetasHorneaterPostDto,
   huevosRotosBruc159PostDto,
 } from "../dto/fixturesDto";
 import { PostDto } from "../dto/types";
@@ -27,6 +28,12 @@ export const handlers = [
     return HttpResponse.json<{ posts: PostDto[]; postsTotal: number }>({
       posts: archivoDeLasTormentasComidaPostsDto,
       postsTotal: archivoDeLasTormentasComidaPostsDto.length,
+    });
+  }),
+
+  http.get(`${apiUrl}/posts/196789123456782456719876`, () => {
+    return HttpResponse.json<{ post: PostDto }>({
+      post: brochetasHorneaterPostDto,
     });
   }),
 
