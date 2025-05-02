@@ -66,7 +66,7 @@ export const teHorneadorPostDto: PostDto = {
 };
 
 export const brochetasHorneaterPostDto: PostDto = {
-  _id: "19",
+  _id: "196789123456782456719876",
   author: "Chef viajero en el Horno de los Picos",
   content:
     "Los Horneater, conocidos por su resistencia y su espíritu festivo, preparan estas brochetas como parte de sus rituales comunitarios. Hechas con trozos de carne bien sazonada, verduras asadas y un toque de sal volcánica, se cocinan sobre piedras calientes en los manantiales termales. Esta versión está adaptada para el asador moderno: carne de cordero o cerdo marinada con mostaza, ajo y especias, intercalada con cebolla y pimiento. Ideal para barbacoas temáticas o celebraciones post-duelo (como harían Rock y su familia). Sirve con cerveza fuerte o agua cristalina, y recuerda brindar en honor a los Radiantes.",
