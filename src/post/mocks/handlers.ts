@@ -47,4 +47,10 @@ export const handlers = [
       post: huevosRotosBruc159PostDto,
     });
   }),
+
+  http.delete(`${apiUrl}/posts/196789123456782456719876`, () => {
+    return HttpResponse.json<{ post: PostDto }>({
+      post: huevosRotosBruc159PostDto,
+    });
+  }),
 ];
