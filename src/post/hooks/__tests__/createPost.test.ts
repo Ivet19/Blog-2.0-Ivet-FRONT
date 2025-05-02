@@ -4,7 +4,7 @@ import { act } from "react";
 import { huevosRotosBruc159PostData } from "../../fixtures";
 
 describe("Given the createPost function", () => {
-  describe("When it's called with Huevos Rotos de Bruc, 159 post", () => {
+  describe("When it's called with Huevos Rotos de Bruc, 159 post data", () => {
     test("Then it should add 'Huevos Rotos de Bruc, 159' post", async () => {
       const { result } = renderHook(() => usePosts());
 
