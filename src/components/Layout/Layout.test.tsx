@@ -3,11 +3,11 @@ import { MemoryRouter } from "react-router";
 import userEvent from "@testing-library/user-event";
 import PostsContextProvider from "../../post/context/PostsContextProvider";
 import Layout from "./Layout";
-import AppRouter from "../../router/AppRouter";
+import AppTestRouter from "../../router/AppTestRouter";
 
 window.scrollTo = vitest.fn();
 
-describe("Given the Header component", () => {
+describe("Given the Layout component", () => {
   describe("When it renders", () => {
     test("Then it should show 'Aliset comiendo por el mundo' inside a level 1 heading", () => {
       render(
@@ -23,33 +23,74 @@ describe("Given the Header component", () => {
 
       expect(appTitle).toBeVisible();
     });
+
+    describe("And the user clicks the link 'Crear post'", () => {
+      test("Then it should show 'Crear nuevo post' inside a heading", async () => {
+        render(
+          <PostsContextProvider>
+            <MemoryRouter initialEntries={["/posts"]}>
+              <Layout />
+              <AppTestRouter />
+            </MemoryRouter>
+          </PostsContextProvider>,
+        );
+
+        const createPostLink = await screen.findByRole("link", {
+          name: /crear post/i,
+        });
+
+        await userEvent.click(createPostLink);
+
+        const createPostTitle = await screen.findByRole("heading", {
+          name: /crear nuevo post/i,
+        });
+
+        expect(createPostTitle).toBeVisible();
+      });
+    });
   });
 
-  describe("When it renders in path /posts?page=1", () => {
-    test("Then it should show Chouta callejero de Alethkar 🌯⚔️ inside a heading", async () => {
+  describe("When it renders in path /posts", () => {
+    test("Then it should show Chouta callejero de Alethkar 🌯⚔️, Pan de luz estelar de Kharbranth ✨🍞, Guiso ancestral de los cantores 🍲🌩️, Pastel gemheart: dulzura esquirlada 💎🍰 and Té de los horneadores ☕🔮 inside a heading", async () => {
       render(
         <PostsContextProvider>
           <MemoryRouter initialEntries={["/posts"]}>
             <Layout />
-            <AppRouter />
+            <AppTestRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
 
-      const postTitle = await screen.findByRole("heading", {
+      const choutaPostTitle = await screen.findByRole("heading", {
         name: /chouta callejero de alethkar 🌯⚔️/i,
       });
+      const panPostTitle = await screen.findByRole("heading", {
+        name: /pan de luz estelar de kharbranth ✨🍞/i,
+      });
+      const guisoPostTitle = await screen.findByRole("heading", {
+        name: /guiso ancestral de los cantores 🍲🌩️/i,
+      });
+      const pastelPostTitle = await screen.findByRole("heading", {
+        name: /pastel gemheart: dulzura esquirlada 💎🍰/i,
+      });
+      const tePostTitle = await screen.findByRole("heading", {
+        name: /té de los horneadores ☕🔮/i,
+      });
 
-      expect(postTitle).toBeVisible();
+      expect(choutaPostTitle).toBeVisible();
+      expect(panPostTitle).toBeVisible();
+      expect(guisoPostTitle).toBeVisible();
+      expect(pastelPostTitle).toBeVisible();
+      expect(tePostTitle).toBeVisible();
     });
 
-    describe("And the user clicks the link with label 'siguiente'", () => {
+    describe("And the user clicks the link '>' with label 'siguiente'", () => {
       test("Then it should show 2 as the current page", async () => {
         render(
           <PostsContextProvider>
-            <MemoryRouter initialEntries={["/posts?page="]}>
+            <MemoryRouter initialEntries={["/posts"]}>
               <Layout />
-              <AppRouter />
+              <AppTestRouter />
             </MemoryRouter>
           </PostsContextProvider>,
         );
@@ -71,7 +112,7 @@ describe("Given the Header component", () => {
         <PostsContextProvider>
           <MemoryRouter initialEntries={["/posts?page=2"]}>
             <Layout />
-            <AppRouter />
+            <AppTestRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
@@ -89,7 +130,7 @@ describe("Given the Header component", () => {
           <PostsContextProvider>
             <MemoryRouter initialEntries={["/posts?page=2"]}>
               <Layout />
-              <AppRouter />
+              <AppTestRouter />
             </MemoryRouter>
           </PostsContextProvider>,
         );
