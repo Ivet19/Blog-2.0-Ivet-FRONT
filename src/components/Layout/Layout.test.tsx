@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router";
 import userEvent from "@testing-library/user-event";
 import PostsContextProvider from "../../post/context/PostsContextProvider";
 import Layout from "./Layout";
-import AppRouter from "../../router/AppRouter";
+import AppTestRouter from "../../router/AppTestRouter";
 
 window.scrollTo = vitest.fn();
 
@@ -29,7 +29,8 @@ describe("Given the Layout component", () => {
         render(
           <PostsContextProvider>
             <MemoryRouter initialEntries={["/posts"]}>
-              <AppRouter />
+              <Layout />
+              <AppTestRouter />
             </MemoryRouter>
           </PostsContextProvider>,
         );
@@ -55,7 +56,7 @@ describe("Given the Layout component", () => {
         <PostsContextProvider>
           <MemoryRouter initialEntries={["/posts"]}>
             <Layout />
-            <AppRouter />
+            <AppTestRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
@@ -89,7 +90,7 @@ describe("Given the Layout component", () => {
           <PostsContextProvider>
             <MemoryRouter initialEntries={["/posts"]}>
               <Layout />
-              <AppRouter />
+              <AppTestRouter />
             </MemoryRouter>
           </PostsContextProvider>,
         );
@@ -111,7 +112,7 @@ describe("Given the Layout component", () => {
         <PostsContextProvider>
           <MemoryRouter initialEntries={["/posts?page=2"]}>
             <Layout />
-            <AppRouter />
+            <AppTestRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
@@ -129,7 +130,7 @@ describe("Given the Layout component", () => {
           <PostsContextProvider>
             <MemoryRouter initialEntries={["/posts?page=2"]}>
               <Layout />
-              <AppRouter />
+              <AppTestRouter />
             </MemoryRouter>
           </PostsContextProvider>,
         );

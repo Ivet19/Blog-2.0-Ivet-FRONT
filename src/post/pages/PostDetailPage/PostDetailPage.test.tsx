@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
-import AppRouter from "../../../router/AppRouter";
 import PostsContextProvider from "../../context/PostsContextProvider";
 import { huevosRotos } from "../../fixtures";
+import AppTestRouter from "../../../router/AppTestRouter";
 
 describe("Given the PostDetailPage component", () => {
   describe("When it receives Huevos Rotos de Bruc, 159 id", () => {
@@ -10,7 +10,7 @@ describe("Given the PostDetailPage component", () => {
       render(
         <PostsContextProvider>
           <MemoryRouter initialEntries={[`/post/${huevosRotos.id}`]}>
-            <AppRouter />
+            <AppTestRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
@@ -26,7 +26,7 @@ describe("Given the PostDetailPage component", () => {
       render(
         <PostsContextProvider>
           <MemoryRouter initialEntries={[`/post/${huevosRotos.id}`]}>
-            <AppRouter />
+            <AppTestRouter />
           </MemoryRouter>
         </PostsContextProvider>,
       );
