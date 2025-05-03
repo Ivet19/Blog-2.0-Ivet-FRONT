@@ -7,9 +7,11 @@ import "./PostsPage.css";
 
 const PostsPage: React.FC = () => {
   const { loadPostsByPage, posts, postsTotal } = usePostsContext();
-  const [page] = useSearchParams();
+  const [urlSearchParams] = useSearchParams();
 
-  const pageNumber = page.get("page") ? Number(page.get("page")) : 1;
+  const pageNumber = urlSearchParams.get("page")
+    ? Number(urlSearchParams.get("page"))
+    : 1;
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
