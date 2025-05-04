@@ -23,7 +23,7 @@ const PostDetailPage: React.FC = () => {
     return <h2 className="loading">Loading...</h2>;
   }
 
-  const imageUrl = post.detailImageUrl ? post.detailImageUrl : post.imageUrl;
+  const imageUrl = post.smallImageUrl ? post.smallImageUrl : post.imageUrl;
 
   return (
     <>
@@ -35,18 +35,15 @@ const PostDetailPage: React.FC = () => {
       </header>
       <div className="post-detail">
         <div className="post-detail__wrapper">
-          <img
-            className="post-detail__image"
-            src={imageUrl}
-            alt={post.imageAlt}
-            width={100}
-            height={100}
-          />
-          <div className="post-detail__info">
-            <p className="post-detail__content">
-              {post.content.replace(/\*/g, "")}
-            </p>
-            <span className="post-detail__author">{post.author}</span>
+          <div className="post-detail__top-info">
+            <img
+              className="post-detail__image"
+              src={imageUrl}
+              srcSet={`${post.smallImageUrl} 300w, ${imageUrl} 500w`}
+              alt={post.imageAlt}
+              width={330}
+              height={330}
+            />
             <ul className="post-detail__tags">
               {post.tags.map((tag) => (
                 <li key={tag}>
@@ -54,6 +51,12 @@ const PostDetailPage: React.FC = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="post-detail__info">
+            <p className="post-detail__content">
+              {post.content.replace(/\*/g, "")}
+            </p>
+            <span className="post-detail__author">{post.author}</span>
           </div>
         </div>
       </div>
