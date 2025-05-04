@@ -3,6 +3,7 @@ import {
   archivoDeLasTormentasComidaPostsDto,
   archivoDeLasTormentasSecondPagePostsDto,
   brochetasHorneaterPostDto,
+  choutaKaladinPostDto,
   huevosRotosBruc159PostDto,
 } from "../dto/fixturesDto";
 import { PostDto } from "../dto/types";
@@ -40,6 +41,12 @@ export const handlers = [
   http.get(`${apiUrl}/posts/159678901234567890123456`, () => {
     return HttpResponse.json<{ post: PostDto }>({
       post: huevosRotosBruc159PostDto,
+    });
+  }),
+
+  http.get(`${apiUrl}/posts/123456789123456789123456`, () => {
+    return HttpResponse.json<{ post: PostDto }>({
+      post: choutaKaladinPostDto,
     });
   }),
 
