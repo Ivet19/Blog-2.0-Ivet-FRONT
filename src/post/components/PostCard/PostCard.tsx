@@ -26,13 +26,14 @@ const PostCard: React.FC<PostCardProps> = ({
 }) => {
   const { deletePost } = usePostsContext();
 
-  const loadingType = index <= 2 ? "eager" : "lazy";
+  const loadingType = index <= 1 ? "eager" : "lazy";
 
   return (
     <article className="post">
       <img
+        src={smallImageUrl}
         srcSet={`${smallImageUrl} 300w, ${imageUrl}420w`}
-        sizes="(min-width: 490px and max-width: 500px) 420px, 300px"
+        sizes="(min-width: 650px) 420px, 300px"
         alt={imageAlt}
         className="post__image"
         width={300}
@@ -55,12 +56,12 @@ const PostCard: React.FC<PostCardProps> = ({
           <span className="post__title">{title}</span>
           <span className="post__author">{author}</span>
         </h3>
-        <p className="post__content">{previewContent}...</p>
+        <p className="post__content">{previewContent.replace(/\*/g, "")}...</p>
         <div className="post__info-bottom">
           <ul className="post__tags">
             {previewTags.map((tag) => (
-              <li key={tag}>
-                <span className="post__tag">#{tag}</span>
+              <li key={tag} className="post__tag">
+                #{tag}
               </li>
             ))}
           </ul>
