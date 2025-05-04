@@ -29,8 +29,10 @@
 }
 
 .post-detail__content {
+  white-space: pre-line;
   text-align: start;
   font-size: 1.1rem;
+  min-height: 350px;
 }
 
 .post-detail__author {
@@ -40,12 +42,8 @@
 
 .post-detail__tags {
   display: flex;
-  flex-direction: column;
   gap: 15px 6px;
-
-  @media (width > 500px) {
-    flex-direction: row;
-  }
+  flex-direction: column;
 }
 
 .post-detail__tag {
