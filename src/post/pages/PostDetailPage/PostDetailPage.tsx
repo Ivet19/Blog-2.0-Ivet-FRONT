@@ -43,7 +43,9 @@ const PostDetailPage: React.FC = () => {
             height={100}
           />
           <div className="post-detail__info">
-            <p className="post-detail__content">{post.content}</p>
+            <p className="post-detail__content">
+              {post.content.replace(/\*/g, "")}
+            </p>
             <span className="post-detail__author">{post.author}</span>
             <ul className="post-detail__tags">
               {post.tags.map((tag) => (
