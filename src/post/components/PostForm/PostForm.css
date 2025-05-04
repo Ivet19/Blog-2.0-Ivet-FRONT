@@ -29,7 +29,8 @@
 .post-form__control {
   padding: 10px;
   font-size: 1.2rem;
-  border-bottom: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
 
   &:focus {
     transition: 0.5s;
@@ -51,14 +52,22 @@
 .post-form__error {
   position: absolute;
   bottom: 20px;
+  font-size: 1.2rem;
   padding: 5px 15px;
   border-radius: 5px;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  padding: 20px 20px;
+  color: #fff;
+  background-color: #ac0013;
 
-  @media (width < 450px) {
+  @media (width < 650px) {
     right: 20px;
     bottom: 65px;
+    padding: 5px 15px;
+    font-size: 1rem;
+  }
+
+  @media (width < 410px) {
+    font-size: 0.8rem;
   }
 }
 
