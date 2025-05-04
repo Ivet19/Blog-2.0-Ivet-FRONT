@@ -14,8 +14,8 @@ describe("Given the Pagination component", () => {
         { wrapper: MemoryRouter },
       );
 
-      const previousLink = screen.getByLabelText(/anterior/i);
-      const nextLink = screen.getByLabelText(/siguiente/i);
+      const previousLink = screen.getByRole("link", { name: /anterior/i });
+      const nextLink = screen.getByRole("link", { name: /siguiente/i });
 
       expect(previousLink).toBeVisible();
       expect(nextLink).toBeVisible();

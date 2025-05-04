@@ -65,6 +65,19 @@ export const teHorneadorPostDto: PostDto = {
   title: "Té de los horneadores ☕🔮",
 };
 
+export const sopaEsquirladosPostDto: PostDto = {
+  _id: "19",
+  author: "Cocinera de la torre de Urithiru",
+  content:
+    "La Sopa de Esquirlados es una receta antigua que se dice fue transmitida por los heraldos a los primeros habitantes de Urithiru. Rica, reconfortante y llena de simbolismo, esta sopa combina raíces doradas, cebollas dulces y pequeños cristales comestibles que representan los lazos de los Radiantes. Su caldo es claro pero profundo, infusionado con jengibre, cúrcuma y una pizca de esencia de esquirla (representada aquí por sal de roca azul). Es perfecta para reconfortar el alma después de un día largo recorriendo las torres de piedra o enfrentando las verdades de la Luz Verdadera. Sirve caliente, con un toque de crema brillante y brotes frescos por encima. Una opción ideal para noches introspectivas o cenas elevadas con sabor espiritual.",
+  imageAlt: "Tazón de sopa dorada con cristales comestibles y brotes frescos",
+  imageUrl: "https://example.com/sopa-esquirlados.jpg",
+  smallImageUrl: "",
+  publishDate: "2025-04-23T00:00:00.000Z",
+  tags: ["stormlightarchive", "sopa", "urithiru"],
+  title: "Sopa de los Esquirlados 🍲💠",
+};
+
 export const brochetasHorneaterPostDto: PostDto = {
   _id: "196789123456782456719876",
   author: "Chef viajero en el Horno de los Picos",
@@ -84,6 +97,7 @@ export const archivoDeLasTormentasComidaPostsDto = [
   guisoParshendiPostDto,
   pastelGemheartsPostDto,
   teHorneadorPostDto,
+  sopaEsquirladosPostDto,
 ];
 
 export const archivoDeLasTormentasSecondPagePostsDto = [
