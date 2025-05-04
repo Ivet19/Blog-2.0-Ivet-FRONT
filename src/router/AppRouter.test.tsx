@@ -53,9 +53,9 @@ describe("Given the Layout component", () => {
         name: /chouta callejero de alethkar 🌯⚔️/i,
       });
 
-      const postCard = postTitle.parentElement!.parentElement!;
+      const postCard = postTitle.closest("article");
 
-      const moreInfoLink = await within(postCard).findByRole("link", {
+      const moreInfoLink = await within(postCard!).findByRole("link", {
         name: "+ info",
       });
 
